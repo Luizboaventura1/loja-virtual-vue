@@ -1,0 +1,32 @@
+name: deploy
+on:
+  push:
+    branches:
+      - master
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '12'
+      - name: setup git auth
+        env:
+          email: 'luizboaventura24@gmail.com'
+          username: 'luizboaventura01'
+          access_token: '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'
+        run: |
+          git config --global credential.helper store
+          echo "https://${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}:x-oauth-basic@github.com" > ~/.git-credentials
+          git config --global user.email $email
+          git config --global user.name $username
+      - name: deploy to gh-pages
+        run: |
+          npm i
+          NODE_ENV=production npm run build
+          cd dist
+          git init
+          git add -A
+          git commit -m "🚀 Deploy id ${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}"
+          git push -f "https://github.com/${https://github.com/Luizboaventura1/loja-virtual-vue}.git" master:gh-pages
