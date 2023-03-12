@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkloja_virtual"]=self["webpackChunkloja_virtual"]||[]).push([[410],{8410:function(n,r,t){t.r(r),t.d(r,{default:function(){return i}});var u=t(6252);function a(n,r,t,a,c,e){const o=(0,u.up)("MainProducts");return(0,u.wg)(),(0,u.j4)(o)}var c=t(1973),e={components:{MainProducts:c.Z}},o=t(3744);const s=(0,o.Z)(e,[["render",a]]);var i=s}}]);
+//# sourceMappingURL=410.6cb73855.js.map
